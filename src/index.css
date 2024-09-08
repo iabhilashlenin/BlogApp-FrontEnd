@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* tailwind.css or index.css */
+
+/* Default light mode styles */
+body {
+    background-color: #f9fafb; /* Light background */
+    color: #1f2937; /* Dark text color */
+  }
+  
+  /* Dark mode styles */
+  .dark body {
+    background-color: #1f2937; /* Dark background */
+    color: #f9fafb; /* Light text color */
+  }
+  
+  .dark header {
+    background-color: #374151; /* Dark header background */
+    color: #f9fafb; /* Light header text color */
+  }
+  
+  /* Add other dark mode styles as needed */
+  /* styles.css or a similar stylesheet */
+.ql-container.ql-snow {
+    background-color: #1f2937; /* Dark background */
+    color: #d1d5db; /* Light text color */
+  }
+  
+  .ql-editor {
+    min-height: 200px; /* Ensure proper height */
+  }
+  
+  .ql-toolbar.ql-snow {
+    background-color: #2d3748; /* Dark toolbar background */
+    color: #e2e8f0; /* Light toolbar text color */
+  }
+  
+  .ql-toolbar button {
+    color: #e2e8f0; /* Light button color */
+  }
+  
+  .ql-editor pre {
+    background-color: #2d3748; /* Dark background for code blocks */
+    color: #f7fafc; /* Light text color for code blocks */
+  }
+  
