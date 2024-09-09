@@ -30,7 +30,7 @@ function IndexPage() {
           Latest Posts
         </h1>
         {loading ? (
-          <div className="flex justify-center items-center h-64">
+          <div className="flex justify-center items-center h-64">Loading
             <RingLoader color="#3498db" loading={loading} size={60} /> {/* Add your loading spinner here */}
           </div>
         ) : posts.length > 0 ? (
