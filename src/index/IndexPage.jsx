@@ -4,13 +4,15 @@ import Footer from '../components/Footer';
 
 function IndexPage() {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true); // Add loading state
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/post`).then(response => {
-      response.json().then(posts => {
+    fetch(`${import.meta.env.VITE_API_URL}/post`)
+      .then(response => response.json())
+      .then(posts => {
         setPosts(posts);
+        setLoading(false); // Data fetched, stop loading
       });
-    });
   }, []);
 
   return (
@@ -19,7 +21,11 @@ function IndexPage() {
         <h1 className="text-3xl font-bold mb-6 text-gray-600 dark:text-gray-100 text-center">
           Latest Posts
         </h1>
-        {posts.length > 0 ? (
+        {loading ? (
+          <div className="flex justify-center items-center min-h-screen">
+            <div className="w-16 h-16 border-4 border-blue-500 border-dashed rounded-full animate-spin"></div>
+          </div>
+        ) : posts.length > 0 ? (
           <div className="space-y-8">
             {posts.map(post => (
               <Post key={post._id} {...post} />
